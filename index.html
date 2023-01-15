@@ -14,35 +14,32 @@
     <div class="wrapper">
         <div class="balance">
             <h2 class="balance__heading">Balance</h2>
-            <h1 id="balance__value" class="balance__value">1935,50</h1>
+            <h1 id="balance__value" class="balance__value"></h1>
         </div>
         <form action="">
             <nav class="value">
-                <button class="plus__button"><i class="fa-solid fa-plus"></i></button>
-                <button class="minus__button"><i class="fa-solid fa-minus"></i></button>
+                <button id="plus__button" class="plus__button"><i class="fa-solid fa-plus"></i></button>
+                <button id="minus__button" class="minus__button"><i class="fa-solid fa-minus"></i></button>
             </nav>
             <div class="input">
-                <input type="number" class="number__input" placeholder="Enter Value">
-                <input type="text" class="text__input" placeholder="Enter description">
+                <input type="number" id="number__input" class="number__input" placeholder="Enter Value">
+                <input type="text" id="text__input" class="text__input" placeholder="Enter description">
             </div>
             <div class="submit">
-                <button class="submit__button">Submit</button>
+                <button id="submit__button" class="submit__button">Submit</button>
             </div>
         </form>
         <div class="income">
-            <ul class="income__list">
+            <ul id="income__list" class="income__list">
                 <h3 class="income__heading">Income</h3>
-                <li class="income__value">1100000000</li>
-                <li class="income__description">Something</li>
             </ul>
         </div>
         <div class="expenses">
-            <ul class="expenses__list">
+            <ul id="expenses__list" class="expenses__list">
                 <h3 class="expenses__heading">Expenses</h3>
-                <li class="expenses__value">1100000000</li>
-                <li class="expenses__description">Something</li>
             </ul>
         </div>
     </div>
+    <script src="/app.js"></script>
 </body>
 </html>
