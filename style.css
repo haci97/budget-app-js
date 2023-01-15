@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+html {
+    font-size: 62.5%;
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+  
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+  
+body {
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 0.6px;
+    min-height: 100%;
+    width: 100%;
+    background-color: #F5F5F5;
+}
+
+.wrapper {
+    min-height: 80rem;
+    width: 78rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr 2fr;
+    grid-column-gap: 3rem;
+    grid-row-gap: 1.5rem;
+    grid-template-areas: 
+        "balance balance"
+        "form form"
+        "income expenses";
+    padding: 2rem 3rem;
+    margin: auto;
+    margin-top: 3rem;
+    background-color: #EFEFEF;
+    border-radius: 15px;
+    box-shadow: 0 0 10px -5px #43546C;
+}
+
+.balance {
+    grid-area: balance;
+    border: 1px solid red;
+}
+
+.balance__heading {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #5DAA72;
+    margin-bottom: 1.5rem;
+}
+
+.balance__value {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: #43546C;
+    border-bottom: 1px solid #43546c25;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: form;
+    padding: 2rem 3rem;
+    background-color: #43546C;
+    border: 1px solid red;
+    border-radius: 15px;
+}
+
+.value {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.plus__button {
+    font-size: 1.6rem;
+    padding: 0.5rem;
+}
+
+.minus__button {
+    font-size: 1.6rem;
+    padding: 0.5rem;
+}
+
+.input {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.number__input {
+    width: 100%;
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: #EFEFEF;
+    margin-bottom: 1.5rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #EFEFEF;
+    outline: none;
+}
+
+
+::placeholder {
+    opacity: 0.8;
+    color: #EFEFEF;
+}
+
+.text__input {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #EFEFEF;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #EFEFEF;
+    outline: none;
+}
+
+.submit {
+    height: 5rem;
+    width: 10rem;
+}
+
+.submit__button {
+    font-size: 2rem;
+    font-weight: 500;
+    height: 100%;
+    width: 100%;
+    border: none;
+    background-color: #EFEFEF;
+    border-radius: 15px;
+}
+
+.income {
+    grid-area: income;
+    border: 1px solid red;
+}
+
+.income__heading {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #4C99AA;
+    margin-bottom: 1.5rem;
+}
+
+.income__value {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: #43546C;
+    margin-bottom: 0.5rem;
+}
+
+.income__description {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #43546C;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #43546c25;
+}
+
+.expenses {
+    grid-area: expenses;
+    border: 1px solid red;
+}
+
+.expenses__heading {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #AA5D5D;
+    margin-bottom: 1.5rem;
+}
+
+.expenses__value {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: #43546C;
+    margin-bottom: 0.5rem;
+}
+
+.expenses__description {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #43546C;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #43546c25;
+}
+
+
