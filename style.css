@@ -40,7 +40,7 @@ body {
     background-color: #EFEFEF;
     border-radius: 15px;
     box-shadow: 0 0 10px -5px #43546C;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .balance {
@@ -62,6 +62,7 @@ body {
 }
 
 form {
+    height: 20rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -98,11 +99,16 @@ form {
     cursor: pointer;
 }
 
+
 .plus__button:hover {
-    opacity: 0.5;
-    color: #43546C;
-    background-color: #EFEFEF;
+    text-shadow: 0 0 10px #EFEFEF;
 }
+
+.plus__button-active {
+    color: #43546C;
+    background: #EFEFEF;
+}
+
 
 .minus__button {
     font-size: 1.6rem;
@@ -121,9 +127,12 @@ form {
 }
 
 .minus__button:hover {
-    opacity: 0.5;
+    text-shadow: 0 0 10px #EFEFEF;
+}
+
+.minus__button-active {
     color: #43546C;
-    background-color: #EFEFEF;
+    background: #EFEFEF;
 }
 
 .input {
@@ -221,6 +230,10 @@ form {
     color: #43546C;
     margin-bottom: 3rem;
     border-bottom: 1px solid #43546c25;
+}
+
+.value__description:last-child {
+    margin-bottom: 0;
 }
 
 

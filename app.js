@@ -1,4 +1,3 @@
-// Store needed elements
 let balanceValue = document.getElementById('balance__value');
 
 const plusButton = document.getElementById('plus__button');
@@ -10,10 +9,73 @@ const submitButton = document.getElementById('submit__button');
 const incomeList = document.getElementById('income__list');
 const expensesList = document.getElementById('expenses__list');
 
-let totalIncome = 12;
-let totalExpenses = 5;
+let totalIncome;
+let totalExpenses;
 let balanceResult;
 
+
+plusButton.addEventListener('click', function(e) {
+    minusButton.classList.remove('minus__button-active');
+    plusButton.classList.add('plus__button-active');
+    e.preventDefault();
+});
+
+minusButton.addEventListener('click', function(e) {
+    minusButton.classList.add('minus__button-active');
+    plusButton.classList.remove('plus__button-active');
+    e.preventDefault();
+});
+
+
+submitButton.addEventListener('click', function(e) {
+   if (numberInput.value == '' && textInput.value =='') {
+        window.alert('Please enter Value and Description')
+        e.preventDefault();
+    }
+    else if (numberInput.value == '') {
+        window.alert('Please enter Value');
+        e.preventDefault();
+    }
+    else if (textInput.value == '') {
+        window.alert('Please enter Description');
+        e.preventDefault();
+    }
+    else if (plusButton.classList.contains('plus__button-active') === true) {
+        let newValueInput = numberInput.value;
+        let newValue = document.createElement('li');
+        newValue.classList.add('value__number');
+        newValue.innerHTML = newValueInput;
+        let newDescriptionInput = textInput.value;
+        let newDescription = document.createElement('li');
+        newDescription.classList.add('value__description');
+        newDescription.innerHTML = newDescriptionInput;
+        incomeList.append(newValue);
+        incomeList.append(newDescription);
+        e.preventDefault();
+    }
+    else if (minusButton.classList.contains('minus__button-active') === true) {
+        let newValueInput = numberInput.value;
+        let newValue = document.createElement('li');
+        newValue.classList.add('value__number');
+        newValue.innerHTML = newValueInput;
+        let newDescriptionInput = textInput.value;
+        let newDescription = document.createElement('li');
+        newDescription.classList.add('value__description');
+        newDescription.innerHTML = newDescriptionInput;
+        expensesList.append(newValue);
+        expensesList.append(newDescription);
+        e.preventDefault();
+    }
+    else {
+        window.alert('Please select the type of value ' + '(+ or -)');
+        e.preventDefault();
+    };
+    e.preventDefault();
+});
+
+
+/* 
+Replace chunks of code inside submit eventlistener with functions below
 
 function getNewValue() {
     let newValueInput = numberInput.value;
@@ -29,72 +91,17 @@ function getNewDescription() {
     newDescription.innerHTML = newDescriptionInput;
 };
 
-minusButton.addEventListener('click', function(e) {
-    minusButton.style.backgroundColor="#EFEFEF";
-    minusButton.style.color="#43546C";
-    plusButton.style.backgroundColor="transparent";
-    plusButton.style.color="#EFEFEF";
-    submitButton.addEventListener('click', function(e) {
-        e.preventDefault()
-        let newValueInput = numberInput.value;
-        let newValue = document.createElement('li');
-        newValue.classList.add('value__number');
-        newValue.innerHTML = newValueInput;
-        let newDescriptionInput = textInput.value;
-        let newDescription = document.createElement('li');
-        newDescription.classList.add('value__description');
-        newDescription.innerHTML = newDescriptionInput;
-        expensesList.append(newValue);
-        expensesList.append(newDescription);
-    });
-    e.preventDefault()
-})
+function submitPositiveValue() {
+    getNewValue();
+    getNewDescription();
+    incomeList.append(newValue);
+    incomeList.append(newDescription);
+};
 
-plusButton.addEventListener('click', function(e) {
-    plusButton.style.backgroundColor="#EFEFEF";
-    plusButton.style.color="#43546C";
-    minusButton.style.backgroundColor="transparent";
-    minusButton.style.color="#EFEFEF";
-    submitButton.addEventListener('click', function(e) {
-        e.preventDefault()
-        let newValueInput = numberInput.value;
-        let newValue = document.createElement('li');
-        newValue.classList.add('value__number');
-        newValue.innerHTML = newValueInput;
-        let newDescriptionInput = textInput.value;
-        let newDescription = document.createElement('li');
-        newDescription.classList.add('value__description');
-        newDescription.innerHTML = newDescriptionInput;
-        incomeList.append(newValue);
-        incomeList.append(newDescription);
-    });
-    e.preventDefault()
-})
-
-
-/* submitButton.addEventListener('click', function(e) {
-    let newValueInput = numberInput.value;
-    let newValue = document.createElement('li');
-    newValue.classList.add('income__value');
-    newValue.innerHTML = newValueInput;
+function submitNegativeValue() {
+    getNewValue();
+    getNewDescription();
     expensesList.append(newValue);
-
-    let newDescriptionInput = textInput.value;
-    let newDescription = document.createElement('li');
-    newDescription.classList.add('value__description');
-    newDescription.innerHTML = newDescriptionInput;
     expensesList.append(newDescription);
-
-    e.preventDefault()
-}); */
-
-
-/* submitButton.addEventListener('click', function() {
-    let inputValue = numberInput.value;
-    let newPlusValue = document.createElement('li');
-    newPlusValue.innerHTML(inputValue);
-    newPlusValue.classList.add('income__value');
-    incomeList.append(newPlusValue);
-}); */
-
-
+};
+*/
